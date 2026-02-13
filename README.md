@@ -48,14 +48,11 @@ Comunicação: API REST para processamento de arquivos via buffer de memória.
 
 Git
 
-Node.js (versão 18 ou superior)
-
 Python (versão 3.10 ou superior)
 
 pip (gerenciador de pacotes do Python)
 
 ## Você pode verificar se está tudo instalado com:
-node -v
 
 python --version
 
