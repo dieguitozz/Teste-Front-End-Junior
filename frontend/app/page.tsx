@@ -15,7 +15,7 @@ export default function Dashboard() {
   const [filtroCategoria, setFiltroCategoria] = useState("Todas");
   const [filtroMes, setFiltroMes] = useState("Todos");
 
-  // --- Lógica de Upload ---
+  {/* Lógica de Upload da Planilha */}
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -28,7 +28,8 @@ export default function Dashboard() {
       const response = await axios.post("http://localhost:8000/upload", formData);
       setData(response.data.dados);
 
-      // Reseta filtros ao carregar um novo arquivo
+       {/* Reseta filtros ao carregar um novo arquivo */}
+
       setFiltroCategoria("Todas");
       setFiltroMes("Todos");
     } catch (error) {
@@ -39,7 +40,7 @@ export default function Dashboard() {
     }
   };
 
-  // --- Lógica de Filtros e Listas ---
+  {/* Lógica de Filtros e Listas */}
   const categorias = useMemo(() => ["Todas", ...new Set(data.map(i => i.Categoria))], [data]);
   const meses = useMemo(() => ["Todos", ...new Set(data.map(i => i.Mes_Ano))].sort(), [data]);
 
@@ -60,7 +61,7 @@ export default function Dashboard() {
       {data.length === 0 ? (
         <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-dashed border-gray-300">
           <UploadCloud className="mx-auto h-16 w-16 text-gray-300 mb-4" />
-          <p className="text-gray-500">Faça upload da planilha para começar.</p>
+          <p className="text-gray-500">Faça upload da sua planilha para começar.</p>
         </div>
       ) : (
         <div className="space-y-8">
