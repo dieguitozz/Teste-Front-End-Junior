@@ -42,21 +42,53 @@ Frontend: Next.js 14, TypeScript, Tailwind CSS, Recharts (ou biblioteca de gráf
 
 Comunicação: API REST para processamento de arquivos via buffer de memória.
 
-##  Como Executar o Projeto
-Passo 1: Backend
-Bash
+#  Como Executar o Projeto
+## Passo 1: Clonar o Repositório
+## Clone o repositório e acesse
+git clone https://github.com/dieguitozz/Teste-Front-End-Junior.git
 
+cd Teste-Front-End-Junior 
+
+## Passo 2: Backend
 Navegue até a pasta do backend
 
+cd backend
+
+(Opcional, mas recomendado) Crie um ambiente virtual
+python -m venv venv
+
+## Ative o ambiente virtual
+Windows:
+venv\Scripts\activate
+
+Mac/Linux:
+source venv/bin/activate
+
+## Instale as dependências
 pip install fastapi pandas uvicorn python-multipart openpyxl
+
+## Inicie o servidor
 uvicorn main:app --reload
-Passo 2: Frontend
-Bash
+
+O backend estará disponível em:
+http://127.0.0.1:8000
+
+## Passo 3: Frontend
+
+Volte para a raiz do projeto
+cd ..
 
 Navegue até a pasta do frontend
+cd frontend
 
+## Instale as dependências
 npm install
+
+## Inicie o projeto
 npm run dev
+
+O frontend estará disponível em:
+http://localhost:3000
 
 
 
